@@ -1,0 +1,87 @@
+:root {
+    --brand: #b3261a;
+    --brand-dark: #8a1c12;
+    --accent: #f2a51d;
+    --cream: #fff6e8;
+}
+body { background: #fffdf9; color: #2b2b2b; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.text-brand { color: var(--brand) !important; }
+.bg-cream { background: var(--cream); }
+
+/* Navbar */
+.site-nav { background: linear-gradient(90deg, var(--brand-dark), var(--brand)); box-shadow: 0 2px 10px rgba(0,0,0,.15); }
+.site-nav .nav-link { font-weight: 500; border-radius: .5rem; padding: .5rem .9rem; }
+.site-nav .nav-link.active, .site-nav .nav-link:hover { background: rgba(255,255,255,.16); color: #fff; }
+
+/* Hero & header */
+.hero { background: linear-gradient(135deg, #8a1c12 0%, #b3261a 55%, #e0731a 100%); }
+.hero-img { border-radius: 1.5rem; max-height: 420px; }
+.page-header { background: linear-gradient(135deg, #8a1c12, #b3261a); color: #fff; padding: 3rem 0; }
+.page-header .breadcrumb a { color: var(--accent); text-decoration: none; }
+.page-header .breadcrumb-item + .breadcrumb-item::before { color: #fff; }
+
+/* Judul */
+.section-title { font-weight: 800; color: var(--brand-dark); position: relative; display: inline-block; }
+.section-title::after { content: ""; display: block; width: 56px; height: 4px; border-radius: 4px; background: var(--accent); margin: .5rem auto 0; }
+.text-start.section-title::after, h3.section-title::after { margin-left: 0; }
+
+/* Tombol & badge */
+.btn-brand { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn-brand:hover, .btn-brand:focus { background: var(--brand-dark); border-color: var(--brand-dark); color: #fff; }
+.badge-region { background: var(--accent); color: #3a2300; font-weight: 600; }
+.price-tag { color: var(--brand); font-weight: 800; }
+
+/* Kartu produk */
+.dish-card { border-radius: 1rem; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.dish-card:hover { transform: translateY(-5px); box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15) !important; }
+.dish-img-wrap { position: relative; overflow: hidden; }
+.dish-img-wrap img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.detail-img { object-fit: cover; min-height: 320px; }
+
+/* Mode tampilan daftar (list) */
+#dishContainer.list-mode > .dish-col { width: 100% !important; flex: 0 0 100%; max-width: 100%; }
+@media (min-width: 576px) {
+    #dishContainer.list-mode .dish-card { flex-direction: row; }
+    #dishContainer.list-mode .dish-img-wrap { flex: 0 0 280px; }
+    #dishContainer.list-mode .dish-img-wrap img { height: 100%; aspect-ratio: auto; }
+}
+
+/* Fitur & statistik */
+.feature-icon { width: 72px; height: 72px; margin: 0 auto 1rem; border-radius: 50%; display: grid; place-items: center; font-size: 2rem; color: #fff; background: linear-gradient(135deg, var(--brand), #e0731a); }
+.stat { background: #fff; border-radius: 1rem; padding: 1.5rem 1rem; box-shadow: 0 .25rem .75rem rgba(0,0,0,.08); font-weight: 600; color: #555; }
+.stat span { display: block; font-size: 2.2rem; font-weight: 800; color: var(--brand); }
+
+/* Footer */
+.site-footer { background: #2a0f0b; color: #fff; }
+.site-footer a { color: #ffd98a; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.site-footer li { margin-bottom: .4rem; }
+
+/* WhatsApp */
+.wa-float { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 1030; width: 60px; height: 60px; border-radius: 50%; border: 0; background: #25d366; color: #fff; font-size: 2rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.3); animation: pulse 2.2s infinite; }
+.wa-float:hover { background: #1ebe5b; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.6); } 70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+.wa-head { background: #128c4a; }
+.wa-item img { width: 56px; height: 56px; object-fit: cover; border-radius: .6rem; }
+#waResults { max-height: 46vh; overflow-y: auto; }
+
+/* Kartu lebih kecil */
+.dish-card .badge-region { font-size: .7rem; }
+.dish-card .card-title { font-size: 1rem; }
+.dish-img-wrap img { aspect-ratio: 1 / 1; }
+
+.hero-menu {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+}
+.hero-menu img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+.hero-menu-caption {
+    background: linear-gradient(transparent, rgba(0, 0, 0, .75));
+    left: 0; right: 0; bottom: 0;
+    padding: 2.5rem 1rem 2.5rem;
+    text-align: left;
+}
